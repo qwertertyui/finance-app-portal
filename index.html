@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高度金融計算機 (Quant Calculator Pro)</title>
+    <meta name="description" content="ブラック・ショールズモデル、ケリー基準、VaR、GARCHモデル、ハースト指数を一括計算できる無料の高度金融計算機アプリ。オプション取引やポートフォリオ管理に最適です。">
+    <title>高度金融計算機 (Quant Calculator Pro) - 無料Webアプリ</title>
     
     <meta name="google-site-verification" content="KSAacQkcmWZkiLYnrnEx1MqjWZeub2m_XwehpZ4DgYU" />
     
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100vh; border: none; }
+        body, html { margin: 0; padding: 0; height: 100%; font-family: "Helvetica Neue", Arial, sans-serif; }
+        .header-content {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        h1 { margin: 0; font-size: 1.2rem; color: #333; }
+        p { margin: 5px 0 0; font-size: 0.8rem; color: #666; }
+        /* アプリ本体の表示エリア */
+        iframe { width: 100%; height: calc(100vh - 80px); border: none; display: block;}
     </style>
 </head>
 <body>
-    <iframe src="https://5ofza9p2wnnvhuxbspuhn9.streamlit.app/?embed=true"></iframe>
+    <div class="header-content">
+        <h1>高度金融計算機 (Quant Calculator Pro)</h1>
+        <p>機能: ブラック・ショールズ | ケリー基準 | VaR | ポートフォリオ分散 | GARCHモデル | ハースト指数</p>
+    </div>
+
+    <iframe src="https://5ofza9p2wnnvhuxbspuhn9.streamlit.app/?embed=true" title="Quant Calculator Pro Application"></iframe>
 </body>
 </html>
