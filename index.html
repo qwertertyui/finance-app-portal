@@ -3,31 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ブラック・ショールズモデル、ケリー基準、VaR、GARCHモデル、ハースト指数を一括計算できる無料の高度金融計算機アプリ。オプション取引やポートフォリオ管理に最適です。">
+    <meta name="description" content="ブラック・ショールズ、ケリー基準、VaR、GARCH、ハースト指数をブラウザで計算できる無料ツール。オプション価格や適正レバレッジ、ボラティリティ予測を一瞬で算出します。">
     <title>高度金融計算機 (Quant Calculator Pro) - 無料Webアプリ</title>
     
     <meta name="google-site-verification" content="KSAacQkcmWZkiLYnrnEx1MqjWZeub2m_XwehpZ4DgYU" />
     
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; font-family: "Helvetica Neue", Arial, sans-serif; }
-        .header-content {
-            background-color: #f8f9fa;
-            padding: 15px 20px;
-            border-bottom: 1px solid #ddd;
-            text-align: center;
+        body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+        h1 { margin: 0; font-size: 1.5rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        /* アプリ埋め込みエリア */
+        .app-wrapper {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        h1 { margin: 0; font-size: 1.2rem; color: #333; }
-        p { margin: 5px 0 0; font-size: 0.8rem; color: #666; }
-        /* アプリ本体の表示エリア */
-        iframe { width: 100%; height: calc(100vh - 80px); border: none; display: block;}
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* 解説テキストエリア */
+        .content-section { background: #f9f9f9; padding: 30px; border-radius: 8px; margin-bottom: 20px; }
+        h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px; }
+        h3 { color: #2980b9; margin-top: 20px; }
+        p { margin-bottom: 15px; }
+        ul { margin-bottom: 15px; }
+        footer { text-align: center; padding: 20px; color: #777; font-size: 0.8rem; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
-    <div class="header-content">
-        <h1>高度金融計算機 (Quant Calculator Pro)</h1>
-        <p>機能: ブラック・ショールズ | ケリー基準 | VaR | ポートフォリオ分散 | GARCHモデル | ハースト指数</p>
+
+<header>
+    <h1>高度金融計算機 (Quant Calculator Pro)</h1>
+    <p>ブラウザで使えるプロ仕様のクオンツ計算ツール</p>
+</header>
+
+<div class="container">
+    <div class="app-wrapper">
+        <iframe src="https://5ofza9p2wnnvhuxbspuhn9.streamlit.app/?embed=true" title="Quant Calculator App"></iframe>
     </div>
 
-    <iframe src="https://5ofza9p2wnnvhuxbspuhn9.streamlit.app/?embed=true" title="Quant Calculator Pro Application"></iframe>
+    <div class="content-section">
+        <h2>搭載されている計算モデルの解説</h2>
+        <p>本ツールでは、金融工学に基づいた以下の6つの高度な計算モデルを無料で利用できます。</p>
+
+        <h3>1. ブラック・ショールズモデル (Black-Scholes Model)</h3>
+        <p>ヨーロピアン・コール・オプションの理論価格を算出するための最も有名なモデルです。現在株価、行使価格、残存期間、金利、ボラティリティを入力することで、適正なオプションプレミアムを計算します。</p>
+
+        <h3>2. ケリー基準 (Kelly Criterion)</h3>
+        <p>投資において「資産を最大化するための最適な賭け金（投資比率）」を算出する数式です。勝率とリスクリワードレシオを入力すると、破産を避けつつ資産を幾何平均的に最大化するレバレッジ比率を提示します。</p>
+
+        <h3>3. VaR (Value at Risk)</h3>
+        <p>特定期間、特定確率において予想される「最大損失額」を計算します。ポートフォリオのリスク管理において、最悪のシナリオでどれだけの資金を失う可能性があるかを定量化します。</p>
+
+        <h3>4. ポートフォリオ分散 (Portfolio Variance)</h3>
+        <p>複数の資産を持つ際の全体のリスク（標準偏差）を行列演算で算出します。各資産のウェイト（比率）とボラティリティ、さらに資産間の「相関係数」を考慮することで、分散投資の効果を正確に測定します。</p>
+
+        <h3>5. GARCHモデル (GARCH Model)</h3>
+        <p>金融資産のボラティリティ（価格変動の激しさ）が時間とともに変化することを考慮した予測モデルです。前日のリターンやボラティリティから、翌日のボラティリティを予測します。</p>
+
+        <h3>6. ハースト指数 (Hurst Exponent)</h3>
+        <p>時系列データが「トレンドを持つ（発散）」か「平均に回帰する」かを判定する指標です。0.5より大きければ順張り、小さければ逆張りが有効である可能性を示唆します。</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Quant Calculator Pro. Powered by Streamlit & GitHub Pages.</p>
+</footer>
+
 </body>
 </html>
